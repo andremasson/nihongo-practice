@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import Paper from "@material-ui/core/Paper";
 import Avatar from "@material-ui/core/Avatar";
 import { makeStyles } from "@material-ui/core/styles";
@@ -52,9 +53,11 @@ const TotalsPanel = ({ totals }) => {
                     {totals.correct} certas de {totals.total} tentativas
                 </p>
                 <Divider className={classes.divider} />
-                <Button variant="contained" color="primary" href={totals.link}>
-                    Iniciar Quiz!
-                </Button>
+                <Link to={totals.link}>
+                    <Button variant="contained" color="primary">
+                        Iniciar Quiz!
+                    </Button>
+                </Link>
             </Grid>
         </Paper>
     );

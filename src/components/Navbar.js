@@ -24,14 +24,18 @@ const Navbar = () => {
     const links = (
         <ul className="mui-list--inline mui--text-body2">
             <li>
-                <Button color="secondary" variant="contained" href="/greetings/edit">
-                    Saudações
-                </Button>
+                <Link to="/greetings/edit">
+                    <Button color="secondary" variant="contained">
+                        Saudações
+                    </Button>
+                </Link>
             </li>
             <li>
-                <Button color="secondary" variant="contained" href="/vocabulary/edit">
-                    Vocabulário
-                </Button>
+                <Link to="/vocabulary/edit">
+                    <Button color="secondary" variant="contained">
+                        Vocabulário
+                    </Button>
+                </Link>
             </li>
         </ul>
     );

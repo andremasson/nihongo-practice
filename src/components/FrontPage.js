@@ -1,7 +1,9 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import TotalsPanel from "./TotalsPanel";
 import { Container, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { setAlert } from "../actions/alert";
+import { connect } from "react-redux";
 
 const useStyles = makeStyles({
     root: {
@@ -31,7 +33,11 @@ const total2 = {
     link: "/vocabulary"
 };
 
-const FrontPage = props => {
+const FrontPage = ({ setAlert }) => {
+    useEffect(() => {
+        setTimeout(setAlert("Tente um Quiz hoje.", "success"), 1000);
+    }, [setAlert]);
+
     const classes = useStyles();
     return (
         <Container className={classes.root}>
@@ -50,4 +56,4 @@ const FrontPage = props => {
     );
 };
 
-export default FrontPage;
+export default connect(null, { setAlert })(FrontPage);
